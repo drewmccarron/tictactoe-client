@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Tic Tac Toe</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -11,7 +11,44 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
-    <body>
-      <h1>Browser Template</h1>
-    </body>
+  <body>
+
+  <h1>Tic Tac Toe</h1>
+
+  <form id='sign-up'>
+    <fieldset>
+      <legend>Sign Up</legend>
+      <input type="email" name='credentials[email]' placeholder="example@example.com">
+      <input type='password' name='credentials[password]' placeholder='Password'>
+      <input type='password' name='credentials[password_confirmation]' placeholder='Confirm Password'>
+      <input type='submit' value='Sign Up'>
+    </fieldset>
+  </form>
+
+  <form id='sign-in'>
+    <fieldset>
+      <legend>Sign In</legend>
+      <input type="email" name='credentials[email]' placeholder="example@example.com">
+      <input type='password' name='credentials[password]' placeholder='Password'>
+      <input type='submit' value='Sign In'>
+    </fieldset>
+  </form>
+
+  <form id='change-password'>
+    <fieldset>
+      <legend>Change Password</legend>
+      <input type='password' name='passwords[old]' placeholder='Old Password'>
+      <input type='password' name='passwords[new]' placeholder='New Password'>
+      <input type='submit' value='Change Password'>
+    </fieldset>
+  </form>
+
+  <form id='sign-out'>
+    <fieldset>
+      <legend>Sign Out!</legend>
+      <input type='submit' value='Sign Out!'>
+    </fieldset>
+  </form>
+
+</body>
 </html>
