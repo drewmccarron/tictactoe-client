@@ -1,1 +1,8 @@
 @import '~bootstrap/scss/bootstrap';
+
+div {
+  border: 1px solid;
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+}
