@@ -39,6 +39,33 @@ const onSignOutFailure = function (response) {
   $('#message').text('Failed to sign out')
 }
 
+const onCreateGameSuccess = function (response) {
+  $('#message').text(store.user.email + ' successfully created a new game')
+  $('#sign-up').trigger('reset')
+}
+
+const onCreateGameFailure = function (response) {
+  $('#message').text('Failed to create game')
+}
+
+const onPatchGameSuccess = function (response) {
+  $('#message').text('Game patched successfully')
+  $('#change-password').trigger('reset')
+}
+
+const onPatchGameFailure = function (response) {
+  $('#message').text('Failed to patch game')
+}
+
+const onGetGamesSuccess = function (response) {
+  $('#message').text('In-progress games gotten successfully')
+  $('#change-password').trigger('reset')
+}
+
+const onGetGamesFailure = function (response) {
+  $('#message').text('Failed to get in-progress games')
+}
+
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
@@ -47,5 +74,11 @@ module.exports = {
   onChangePasswordSuccess,
   onChangePasswordFailure,
   onSignOutSuccess,
-  onSignOutFailure
+  onSignOutFailure,
+  onCreateGameSuccess,
+  onCreateGameFailure,
+  onPatchGameSuccess,
+  onPatchGameFailure,
+  onGetGamesSuccess,
+  onGetGamesFailure
 }

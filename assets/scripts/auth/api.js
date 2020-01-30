@@ -40,9 +40,48 @@ const signOut = function (data) {
   })
 }
 
+const createGame = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/games',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: '{}'
+  })
+}
+
+const patchGame = function (data) {
+  return $.ajax({
+    // ID number is a placeholder value here. It will be added later when game
+    // logic is introduced
+    url: config.apiUrl + '/games/:' + 5162,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    // Data value is a placeholder. It will be added later when game logic is
+    // introduced.
+    data: ''
+  })
+}
+
+const getGames = function () {
+  return $.ajax({
+    url: config.apiUrl + '/games?over=false',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   changePassword,
-  signOut
+  signOut,
+  createGame,
+  patchGame,
+  getGames
 }

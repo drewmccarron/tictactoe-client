@@ -41,9 +41,42 @@ const onSignOut = function (event) {
     .catch(ui.onSignOutSuccess)
 }
 
+const onCreateGame = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const data = getFormFields(form)
+  console.log(data)
+
+  api.createGame(data)
+    .then(ui.onCreateGameSuccess)
+    .catch(ui.onCreateGameFailure)
+}
+
+const onPatchGame = function (event) {
+  event.preventDefault()
+  // Data value is a placeholder here. It will be added later when game
+  // logic is introduced
+  const data = ''
+
+  api.patchGame(data)
+    .then(ui.onPatchGameSuccess)
+    .catch(ui.onPatchGameFailure)
+}
+
+const onGetGames = function (event) {
+  event.preventDefault()
+
+  api.getGames()
+    .then(ui.onGetGamesSuccess)
+    .catch(ui.onGetGamesFailure)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
-  onSignOut
+  onSignOut,
+  onCreateGame,
+  onPatchGame,
+  onGetGames
 }
