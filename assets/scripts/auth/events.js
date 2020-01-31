@@ -68,12 +68,12 @@ const onPatchGame = function (event) {
   // Data value is a placeholder here. It will be added later when game
   // logic is introduced
   const data = {
-    "game": {
-      "cell": {
-        "index": store.gridLocation,
-        "value": `${store.currentPlayer}`
+    'game': {
+      'cell': {
+        'index': store.gridLocation,
+        'value': `${store.currentPlayer}`
       },
-      "over": false
+      'over': false
     }
   }
 

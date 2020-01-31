@@ -2,8 +2,6 @@
 
 const store = require('./store')
 const authEvents = require('./auth/events')
-const api = require('./auth/api')
-const ui = require('./auth/ui')
 
 const placePiece = function (event) {
   store.gridLocation = Number(event.target.id)
