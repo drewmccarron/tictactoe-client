@@ -42,6 +42,9 @@ const onSignOutFailure = function (response) {
 const onCreateGameSuccess = function (response) {
   $('#message').text(store.user.email + ' successfully created a new game')
   $('#sign-up').trigger('reset')
+  store.game = response.game
+  store.turnNumber = 0
+  store.currentPlayer = 'x'
 }
 
 const onCreateGameFailure = function (response) {
@@ -51,6 +54,8 @@ const onCreateGameFailure = function (response) {
 const onPatchGameSuccess = function (response) {
   $('#message').text('Game patched successfully')
   $('#change-password').trigger('reset')
+  console.log(response.game)
+  store.game = response.game
 }
 
 const onPatchGameFailure = function (response) {

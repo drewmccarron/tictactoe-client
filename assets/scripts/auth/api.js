@@ -52,17 +52,18 @@ const createGame = function (data) {
 }
 
 const patchGame = function (data) {
+  console.log('Data = ' + data)
   return $.ajax({
     // ID number is a placeholder value here. It will be added later when game
     // logic is introduced
-    url: config.apiUrl + '/games/:' + 5162,
+    url: config.apiUrl + '/games/' + store.game.id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
     // Data value is a placeholder. It will be added later when game logic is
     // introduced.
-    data: ''
+    data: data
   })
 }
 

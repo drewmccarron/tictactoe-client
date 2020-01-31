@@ -3,6 +3,7 @@
 const getFormFields = require('./../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
+const store = require('./../store')
 
 const onSignUp = function (event) {
   event.preventDefault()
@@ -45,7 +46,6 @@ const onCreateGame = function (event) {
   event.preventDefault()
   const form = event.target
   const data = getFormFields(form)
-  console.log(data)
 
   api.createGame(data)
     .then(ui.onCreateGameSuccess)
@@ -53,10 +53,17 @@ const onCreateGame = function (event) {
 }
 
 const onPatchGame = function (event) {
-  event.preventDefault()
   // Data value is a placeholder here. It will be added later when game
   // logic is introduced
-  const data = ''
+  const data = {
+  "game": {
+    "cell": {
+      "index": store.gridLocation,
+      "value": `${store.currentPlayer}`
+    },
+    "over": false
+  }
+}
 
   api.patchGame(data)
     .then(ui.onPatchGameSuccess)

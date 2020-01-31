@@ -7,6 +7,8 @@
 // require('./example')
 
 const authEvents = require('./auth/events')
+const store = require('./store')
+const gameEvents = require('./game-logic.js')
 
 $(() => {
   $('#sign-up').on('submit', authEvents.onSignUp)
@@ -19,4 +21,5 @@ $(() => {
   $('#create-game').on('submit', authEvents.onCreateGame)
   $('#patch-game').on('submit', authEvents.onPatchGame)
   $('#get-games').on('submit', authEvents.onGetGames)
+  $('.game-board').on('click', gameEvents.placePiece)
 })
