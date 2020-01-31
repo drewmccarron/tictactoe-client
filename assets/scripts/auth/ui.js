@@ -40,7 +40,7 @@ const onSignOutFailure = function (response) {
 }
 
 const onCreateGameSuccess = function (response) {
-  $('#message').text(store.user.email + ' successfully created a new game')
+  $('#message').text(`You successfully created a new game. It's player x's turn`)
   $('#sign-up').trigger('reset')
   store.game = response.game
   store.turnNumber = 0
@@ -65,12 +65,12 @@ const onPatchGameFailure = function (response) {
 }
 
 const onGetGamesSuccess = function (response) {
-  $('#message').text('In-progress games gotten successfully')
-  $('#change-password').trigger('reset')
+  $('#message').text('Games retrieved successfully')
+  $('#game-log').text(JSON.stringify(response.games))
 }
 
 const onGetGamesFailure = function (response) {
-  $('#message').text('Failed to get in-progress games')
+  $('#message').text('Failed to retrieve games')
 }
 
 const testWin = function (index1, index2, index3) {
@@ -122,8 +122,9 @@ const changePlayer = function () {
   } else {
     store.currentPlayer = 'o'
   }
-  console.log('Current turn = ' + store.turnNumber)
-  console.log('Current player = ' + store.currentPlayer)
+  if (store.game.over === false) {
+    $('#message').text(`Player ${store.currentPlayer}'s turn`)
+  }
 }
 
 module.exports = {

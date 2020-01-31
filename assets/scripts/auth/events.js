@@ -44,6 +44,18 @@ const onSignOut = function (event) {
 
 const onCreateGame = function (event) {
   event.preventDefault()
+
+  const form = event.target
+  const data = getFormFields(form)
+
+  api.createGame(data)
+    .then(ui.onCreateGameSuccess)
+    .catch(ui.onCreateGameFailure)
+}
+
+const onResetGame = function (event) {
+  event.preventDefault()
+  $('.game-board').text('-')
   const form = event.target
   const data = getFormFields(form)
 
@@ -85,5 +97,6 @@ module.exports = {
   onSignOut,
   onCreateGame,
   onPatchGame,
-  onGetGames
+  onGetGames,
+  onResetGame
 }

@@ -7,9 +7,13 @@ const ui = require('./auth/ui')
 
 const placePiece = function (event) {
   store.gridLocation = Number(event.target.id)
-  if ($(`#${store.gridLocation}`).text() === '-' && store.game.over === false) {
-    insertPiece()
-    authEvents.onPatchGame()
+  if (store.game.over !== true) {
+    if ($(`#${store.gridLocation}`).text() === '-') {
+      insertPiece()
+      authEvents.onPatchGame()
+    } else {
+      $('#message').text('Error: cannot override previous moves')
+    }
   }
 }
 
