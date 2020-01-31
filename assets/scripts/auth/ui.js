@@ -54,8 +54,10 @@ const onCreateGameFailure = function (response) {
 const onPatchGameSuccess = function (response) {
   $('#message').text('Game patched successfully')
   $('#change-password').trigger('reset')
-  console.log(response.game)
   store.game = response.game
+  winCheck()
+  console.log(store.game)
+  changePlayer()
 }
 
 const onPatchGameFailure = function (response) {
@@ -69,6 +71,59 @@ const onGetGamesSuccess = function (response) {
 
 const onGetGamesFailure = function (response) {
   $('#message').text('Failed to get in-progress games')
+}
+
+const testWin = function (index1, index2, index3) {
+  return ((store.game.cells[index1] !== '' && store.game.cells[index1] === store.game.cells[index2] && store.game.cells[index1] === store.game.cells[index3]))
+}
+
+const winCheck = function () {
+  // three horizontal wins
+  if (testWin(0, 1, 2)) {
+    $('#message').text("Player " + store.currentPlayer + " wins!")
+    store.game.over = true
+  } else if (testWin(3, 4, 5)) {
+    $('#message').text("Player " + store.currentPlayer + " wins!")
+    store.game.over = true
+  } else if (testWin(6, 7, 8)) {
+    $('#message').text("Player " + store.currentPlayer + " wins!")
+    store.game.over = true
+  // three vertical wins
+  } else if (testWin(0, 3, 6)) {
+    $('#message').text("Player " + store.currentPlayer + " wins!")
+    store.game.over = true
+  } else if (testWin(1, 4, 7)) {
+    $('#message').text("Player " + store.currentPlayer + " wins!")
+    store.game.over = true
+  } else if (testWin(2, 5, 8)) {
+    $('#message').text("Player " + store.currentPlayer + " wins!")
+    store.game.over = true
+    // two diagonal wins
+  } else if (testWin(0, 4, 8)) {
+    $('#message').text("Player " + store.currentPlayer + " wins!")
+    store.game.over = true
+  } else if (testWin(2, 4, 6)) {
+    $('#message').text("Player " + store.currentPlayer + " wins!")
+    store.game.over = true
+  } else if (!store.game.cells.includes('')) {
+    // If the board has been completely filled and no one won, it's a draw
+    $('#message').text("It's a draw.")
+    store.game.over = true
+  } else {
+    // If none of the above is the case, the game is still going.
+    console.log('The game goes on.')
+  }
+}
+
+const changePlayer = function () {
+  store.turnNumber++
+  if (store.turnNumber % 2 === 0) {
+    store.currentPlayer = 'x'
+  } else {
+    store.currentPlayer = 'o'
+  }
+  console.log('Current turn = ' + store.turnNumber)
+  console.log('Current player = ' + store.currentPlayer)
 }
 
 module.exports = {
@@ -85,5 +140,6 @@ module.exports = {
   onPatchGameSuccess,
   onPatchGameFailure,
   onGetGamesSuccess,
-  onGetGamesFailure
+  onGetGamesFailure,
+  winCheck
 }

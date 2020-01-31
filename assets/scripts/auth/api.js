@@ -52,7 +52,6 @@ const createGame = function (data) {
 }
 
 const patchGame = function (data) {
-  console.log('Data = ' + data)
   return $.ajax({
     // ID number is a placeholder value here. It will be added later when game
     // logic is introduced

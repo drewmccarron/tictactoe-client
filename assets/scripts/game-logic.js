@@ -3,24 +3,13 @@
 const store = require('./store')
 const authEvents = require('./auth/events')
 const api = require('./auth/api')
-
-const changePlayer = function () {
-  store.turnNumber++
-  if (store.turnNumber % 2 === 0) {
-    store.currentPlayer = 'x'
-  } else {
-    store.currentPlayer = 'o'
-  }
-  console.log('Current turn = ' + store.turnNumber)
-  console.log('Current player = ' + store.currentPlayer)
-}
+const ui = require('./auth/ui')
 
 const placePiece = function (event) {
   store.gridLocation = Number(event.target.id)
-  if ($(`#${store.gridLocation}`).text() === '-') {
+  if ($(`#${store.gridLocation}`).text() === '-' && store.game.over === false) {
     insertPiece()
     authEvents.onPatchGame()
-    changePlayer()
   }
 }
 
