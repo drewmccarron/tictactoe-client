@@ -17,6 +17,18 @@
 
   <h3 id='message'></h3>
 
+  <form class='hidden' id='reset-game'>
+    <fieldset>
+      <input type='submit' value='New Game'>
+    </fieldset>
+  </form>
+
+  <form class='hidden' id='get-games'>
+    <fieldset>
+      <input type='submit' value='Get Games'>
+    </fieldset>
+  </form>
+
   <div class='col-12 md' id='whole-board'>
     <div class='game-board col-4' id='0'>-</div>
     <div class='game-board col-4' id='1'>-</div>
@@ -48,7 +60,7 @@
     </fieldset>
   </form>
 
-  <form id='change-password'>
+  <form class='hidden' id='change-password'>
     <fieldset>
       <legend>Change Password</legend>
       <input type='password' name='passwords[old]' placeholder='Old Password'>
@@ -57,28 +69,10 @@
     </fieldset>
   </form>
 
-  <form id='sign-out'>
+  <form class='hidden' id='sign-out'>
     <fieldset>
       <legend>Sign Out!</legend>
       <input type='submit' value='Sign Out!'>
-    </fieldset>
-  </form>
-
-  <form id='create-game'>
-    <fieldset>
-      <input type='submit' value='Create Game'>
-    </fieldset>
-  </form>
-
-  <form id='reset-game'>
-    <fieldset>
-      <input type='submit' value='Reset Game'>
-    </fieldset>
-  </form>
-
-  <form id='get-games'>
-    <fieldset>
-      <input type='submit' value='Get Games'>
     </fieldset>
   </form>
 

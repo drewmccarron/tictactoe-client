@@ -17,7 +17,6 @@ $(() => {
 })
 
 $(() => {
-  $('#create-game').on('submit', authEvents.onCreateGame)
   $('#reset-game').on('submit', authEvents.onResetGame)
   $('#get-games').on('submit', authEvents.onGetGames)
   $('.game-board').on('click', gameEvents.placePiece)
