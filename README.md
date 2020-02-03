@@ -1,10 +1,10 @@
-#Documentation
+##Documentation
 
-##Technologies
+###Technologies
 
 This app uses HTML, CSS, JavaScript, Bootstrap, Jquery, and AJAX.
 
-##Planning
+###Planning
 
 The original plan was to complete the app in multiple steps:
 
@@ -16,7 +16,7 @@ The original plan was to complete the app in multiple steps:
 
 At this point, the core functionality of the app would be completed, which would leave things like app design and code clean-up as potential future tasks.
 
-##Development Process
+###Development Process
 
 Like intended in the original plan, the app was built in steps that would expand upon the previous steps. Unlike the plan, the real development process did not
 go in that specific order.
@@ -29,7 +29,13 @@ Next, I started the game action functions. This included adding a functioning ga
 
 Once the app could succesfully create and patch games through the API, the core functions of the app were largely complete. Development past this point largely included work on app design, UI elements, cleaning and reorganizing the code.
 
-##Wireframes
+###Future Updates
+
+Potential future updates to the app include various design and visual enhancements, more options for game data retrieval (e.g. comleted games, won games, etc.), and multiplayer.
+
+The highest priority updates would be overall app layout and presentation. At the time of writing this, the app is lacking in terms of visuals and it is mostly black and white with default font. Any upgrades in this area would be a notable improvement.
+
+###Wireframes
 
 [Desktop](https://i.imgur.com/eQCwSlD.jpg)
 [Mobile](https://i.imgur.com/LMoCDIj.jpg)
