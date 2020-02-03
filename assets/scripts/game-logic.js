@@ -1,14 +1,14 @@
 'use strict'
 
 const store = require('./store')
-const authEvents = require('./auth/events')
+const gameEvents = require('./game/events')
 
 const placePiece = function (event) {
   store.gridLocation = Number(event.target.id)
   if (store.game.over !== true) {
     if ($(`#${store.gridLocation}`).text() === '-') {
       insertPiece()
-      authEvents.onPatchGame()
+      gameEvents.onPatchGame()
     } else {
       $('#message').text('Error: cannot override previous moves')
     }
