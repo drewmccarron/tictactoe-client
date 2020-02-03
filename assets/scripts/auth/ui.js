@@ -48,6 +48,7 @@ const onSignOutSuccess = function (response) {
   $('#create-game').addClass('hidden')
   $('#reset-game').addClass('hidden')
   $('#get-games').addClass('hidden')
+  $('#4').text('Sign in to play')
 }
 
 const onSignOutFailure = function (response) {
