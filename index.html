@@ -15,31 +15,42 @@
 
   <h1>Tic Tac Toe</h1>
 
-  <h3 id='message'></h3>
-
-  <form class='hidden' id='reset-game'>
-    <fieldset>
-      <input type='submit' value='New Game'>
-    </fieldset>
-  </form>
-
-  <form class='hidden' id='get-games'>
-    <fieldset>
-      <input type='submit' value='Get Games'>
-    </fieldset>
-  </form>
-
-  <div class='col-12 md' id='whole-board'>
+  <div class='col-10 md' id='whole-board'>
     <div class='game-board col-4' id='0'>-</div>
     <div class='game-board col-4' id='1'>-</div>
     <div class='game-board col-4' id='2'>-</div>
     <div class='game-board col-4' id='3'>-</div>
-    <div class='game-board col-4' id='4'>-</div>
+    <div class='game-board col-4' id='4'>Sign in to play</div>
     <div class='game-board col-4' id='5'>-</div>
     <div class='game-board col-4' id='6'>-</div>
     <div class='game-board col-4' id='7'>-</div>
     <div class='game-board col-4' id='8'>-</div>
   </div>
+
+  <h3 id='message'></h3>
+
+  <div id='game-buttons'>
+    <form class='hidden' id='reset-game'>
+      <fieldset>
+        <input type='submit' value='New Game'>
+      </fieldset>
+    </form>
+
+    <form class='hidden' id='get-games'>
+      <fieldset>
+        <input type='submit' value='Get Games'>
+      </fieldset>
+    </form>
+  </div>
+
+  <form id='sign-in'>
+      <fieldset>
+      <legend>Sign In</legend>
+      <input type="email" name='credentials[email]' placeholder="example@example.com">
+      <input type='password' name='credentials[password]' placeholder='Password'>
+      <input type='submit' value='Sign In'>
+    </fieldset>
+  </form>
 
   <form id='sign-up'>
     <fieldset>
@@ -51,12 +62,10 @@
     </fieldset>
   </form>
 
-  <form id='sign-in'>
+  <form class='hidden' id='sign-out'>
     <fieldset>
-      <legend>Sign In</legend>
-      <input type="email" name='credentials[email]' placeholder="example@example.com">
-      <input type='password' name='credentials[password]' placeholder='Password'>
-      <input type='submit' value='Sign In'>
+      <legend>Sign Out!</legend>
+      <input type='submit' value='Sign Out'>
     </fieldset>
   </form>
 
@@ -68,15 +77,6 @@
       <input type='submit' value='Change Password'>
     </fieldset>
   </form>
-
-  <form class='hidden' id='sign-out'>
-    <fieldset>
-      <legend>Sign Out!</legend>
-      <input type='submit' value='Sign Out!'>
-    </fieldset>
-  </form>
-
-  <p id='game-log'></p>
 
 </body>
 </html>

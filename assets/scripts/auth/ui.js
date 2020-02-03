@@ -22,6 +22,7 @@ const onSignInSuccess = function (response) {
   $('#create-game').removeClass('hidden')
   $('#reset-game').removeClass('hidden')
   $('#get-games').removeClass('hidden')
+  $('#4').text("Press 'New Game' to play")
 }
 
 const onSignInFailure = function (response) {
@@ -55,7 +56,6 @@ const onSignOutFailure = function (response) {
 
 const onCreateGameSuccess = function (response) {
   $('#message').text(`You successfully created a new game. It's player x's turn`)
-  $('#sign-up').trigger('reset')
   store.game = response.game
   store.turnNumber = 0
   store.currentPlayer = 'x'
@@ -67,7 +67,6 @@ const onCreateGameFailure = function (response) {
 
 const onPatchGameSuccess = function (response) {
   $('#message').text('Game patched successfully')
-  $('#change-password').trigger('reset')
   store.game = response.game
   winCheck()
   console.log(store.game)
@@ -79,8 +78,7 @@ const onPatchGameFailure = function (response) {
 }
 
 const onGetGamesSuccess = function (response) {
-  $('#message').text('Games retrieved successfully')
-  $('#game-log').text(JSON.stringify(response.games))
+  $('#message').text(`You have played ${Object.keys(response.games).length} games`)
 }
 
 const onGetGamesFailure = function (response) {
@@ -125,16 +123,16 @@ const winCheck = function () {
     store.game.over = true
   } else {
     // If none of the above is the case, the game is still going.
-    console.log('The game goes on.')
+    console.log('No winner yet.')
   }
 }
 
 const changePlayer = function () {
   store.turnNumber++
   if (store.turnNumber % 2 === 0) {
-    store.currentPlayer = 'x'
+    store.currentPlayer = 'X'
   } else {
-    store.currentPlayer = 'o'
+    store.currentPlayer = 'O'
   }
   if (store.game.over === false) {
     $('#message').text(`Player ${store.currentPlayer}'s turn`)

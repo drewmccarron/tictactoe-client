@@ -7,6 +7,28 @@ div {
   padding: 1rem;
 }
 
+h1, h3 {
+  text-align: center;
+}
+
+#whole-board {
+  margin: auto;
+}
+
+.game-board {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  height: auto;
+}
+
 .hidden {
   display: none;
+}
+
+#game-buttons {
+  border: 0;
+  display: flex;
+  align-content: center;
+  justify-content: center;
 }
