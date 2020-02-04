@@ -6,16 +6,16 @@ const gameEvents = require('./game/events')
 const placePiece = function (event) {
   store.gridLocation = Number(event.target.id)
   if (store.game === undefined) {
-    $('#message').text("Press 'New Game' to start playing")
+    store.redMessage("Press 'New Game' to start playing")
   } else if (store.game.over !== true) {
     if ($(`#${store.gridLocation}`).text() === '-') {
       insertPiece()
       gameEvents.onPatchGame()
     } else {
-      $('#message').text('Error: cannot override previous moves')
+      store.redMessage('Error: cannot override previous moves')
     }
   } else if (store.game.over === true) {
-    $('#message').text("Game over. Press 'New Game' to play again")
+    store.redMessage("Game over. Press 'New Game' to play again")
   }
 }
 
