@@ -5,8 +5,10 @@ const gameEvents = require('./game/events')
 
 const placePiece = function (event) {
   store.gridLocation = Number(event.target.id)
-  if (store.game === undefined) {
-    store.redMessage("Press 'New Game' to start playing")
+  if (store.game === undefined && store.user === undefined) {
+    store.redMessage('Sign in to play')
+  } else if (store.game === undefined) {
+    store.redMessage("Press 'New Game' to play")
   } else if (store.game.over !== true) {
     if ($(`#${store.gridLocation}`).text() === '-') {
       insertPiece()
