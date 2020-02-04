@@ -1,6 +1,6 @@
 @import '~bootstrap/scss/bootstrap';
 
-div {
+#whole-board, .game-board {
   border: 1px solid;
   display: flex;
   flex-wrap: wrap;

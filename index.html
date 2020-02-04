@@ -29,7 +29,9 @@
 
   <h3 id='message'></h3>
 
-  <div id='game-buttons'>
+  <div>
+    <button class="btn btn-primary sign-in" data-toggle="collapse" href="#sign-in">Sign In</button>
+    <button class="btn btn-primary sign-up" data-toggle="collapse" href="#sign-up">Sign Up</button>
     <form class='hidden' id='reset-game'>
       <fieldset>
         <input class='btn btn-primary' type='submit' value='New Game'>
@@ -41,42 +43,43 @@
         <input class='btn btn-primary' type='submit' value='Get Games'>
       </fieldset>
     </form>
+
+    <form class='hidden sign-out' id='sign-out'>
+      <fieldset>
+        <input class='btn btn-primary' type='submit' value='Sign Out'>
+      </fieldset>
+    </form>
+    <button class="hidden btn btn-primary change-password" data-toggle="collapse" href="#change-password">Change Password</button>
   </div>
 
+    <form class="collapse sign-in" id='sign-in'>
+      <fieldset>
+        <div><input type="email" name='credentials[email]' placeholder="example@example.com"></div>
+        <div><input type='password' name='credentials[password]' placeholder='Password'></div>
+        <input class='btn btn-primary' type='submit' value='Submit'>
+      </fieldset>
+    </form>
 
-  <button class="btn btn-primary sign-in" data-toggle="collapse" href="#sign-in">Sign In</button>
-  <form class="collapse sign-in" id='sign-in'>
-    <fieldset>
-      <input type="email" name='credentials[email]' placeholder="example@example.com">
-      <input type='password' name='credentials[password]' placeholder='Password'>
-      <input class='btn btn-primary' type='submit' value='Submit'>
-    </fieldset>
-  </form>
 
-  <button class="btn btn-primary sign-up" data-toggle="collapse" href="#sign-up">Sign Up</button>
-  <form class='collapse sign-up' id='sign-up'>
-    <fieldset>
-      <input type="email" name='credentials[email]' placeholder="example@example.com">
-      <input type='password' name='credentials[password]' placeholder='Password'>
-      <input type='password' name='credentials[password_confirmation]' placeholder='Confirm Password'>
-      <input class='btn btn-primary' type='submit' value='Submit'>
-    </fieldset>
-  </form>
+    <form class='collapse sign-up' id='sign-up'>
+      <fieldset>
+        <div><input type="email" name='credentials[email]' placeholder="example@example.com"></div>
+        <div><input type='password' name='credentials[password]' placeholder='Password'></div>
+        <div><input type='password' name='credentials[password_confirmation]' placeholder='Confirm Password'></div>
+        <input class='btn btn-primary' type='submit' value='Submit'>
+      </fieldset>
+    </form>
 
-  <form class='hidden sign-out' id='sign-out'>
-    <fieldset>
-      <input class='btn btn-primary' type='submit' value='Sign Out'>
-    </fieldset>
-  </form>
 
-  <button class="hidden btn btn-primary change-password" data-toggle="collapse" href="#change-password">Change Password</button>
-  <form class='hidden collapse change-password' id='change-password'>
-    <fieldset>
-      <input type='password' name='passwords[old]' placeholder='Old Password'>
-      <input type='password' name='passwords[new]' placeholder='New Password'>
-      <input class='btn btn-primary' type='submit' value='Submit'>
-    </fieldset>
-  </form>
+
+    <form class='hidden collapse change-password' id='change-password'>
+      <fieldset>
+        <div><input type='password' name='passwords[old]' placeholder='Old Password'></div>
+        <div><input type='password' name='passwords[new]' placeholder='New Password'></div>
+        <input class='btn btn-primary' type='submit' value='Submit'>
+      </fieldset>
+    </form>
+
 
 </body>
 </html>
