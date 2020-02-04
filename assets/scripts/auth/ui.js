@@ -3,17 +3,17 @@
 const store = require('./../store')
 
 const onSignUpSuccess = function (response) {
-  $('#message').text(response.user.email + ' successfully signed up')
   $('#sign-up').trigger('reset')
+  store.greenMessage(response.user.email + ' successfully signed up')
 }
 
 const onSignUpFailure = function (response) {
-  $('#message').text('Failed to sign up')
   $('#sign-up').trigger('reset')
+  store.redMessage('Failed to sign up')
 }
 
 const onSignInSuccess = function (response) {
-  $('#message').text(response.user.email + ' successfully signed in')
+  store.greenMessage(response.user.email + ' successfully signed in')
   $('#sign-in').trigger('reset')
   store.user = response.user
   $('.sign-in').addClass('hidden')
@@ -28,22 +28,22 @@ const onSignInSuccess = function (response) {
 }
 
 const onSignInFailure = function (response) {
-  $('#message').text('Failed to sign in')
+  store.redMessage('Failed to sign in')
   $('#sign-in').trigger('reset')
 }
 
 const onChangePasswordSuccess = function (response) {
-  $('#message').text('You changed your password successfully')
+  store.greenMessage('You changed your password successfully')
   $('#change-password').trigger('reset')
 }
 
 const onChangePasswordFailure = function (response) {
-  $('#message').text('Failed to change password')
+  store.redMessage('Failed to change password')
   $('#change-password').trigger('reset')
 }
 
 const onSignOutSuccess = function (response) {
-  $('#message').text('Signed out successfully')
+  store.greenMessage('Signed out successfully')
   store.user = undefined
   store.game = undefined
   $('.sign-in').removeClass('hidden')
@@ -58,7 +58,7 @@ const onSignOutSuccess = function (response) {
 }
 
 const onSignOutFailure = function (response) {
-  $('#message').text('Failed to sign out')
+  store.redMessage('Failed to sign out')
 }
 
 module.exports = {

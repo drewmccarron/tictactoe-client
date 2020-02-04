@@ -1,6 +1,6 @@
 @import '~bootstrap/scss/bootstrap';
 
-div {
+#whole-board, .game-board {
   border: 1px solid;
   display: flex;
   flex-wrap: wrap;
@@ -31,4 +31,13 @@ h1, h3 {
   display: flex;
   align-content: center;
   justify-content: center;
+}
+
+#test {
+  display: flex;
+  justify-content: center;
+}
+
+.inner-buttons {
+  padding: 1px
 }
