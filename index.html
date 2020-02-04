@@ -32,49 +32,49 @@
   <div id='game-buttons'>
     <form class='hidden' id='reset-game'>
       <fieldset>
-        <input type='submit' value='New Game'>
+        <input class='btn btn-primary' type='submit' value='New Game'>
       </fieldset>
     </form>
 
     <form class='hidden' id='get-games'>
       <fieldset>
-        <input type='submit' value='Get Games'>
+        <input class='btn btn-primary' type='submit' value='Get Games'>
       </fieldset>
     </form>
   </div>
 
-  <form id='sign-in'>
-      <fieldset>
-      <legend>Sign In</legend>
+
+  <button class="btn btn-primary sign-in" data-toggle="collapse" href="#sign-in">Sign In</button>
+  <form class="collapse sign-in" id='sign-in'>
+    <fieldset>
       <input type="email" name='credentials[email]' placeholder="example@example.com">
       <input type='password' name='credentials[password]' placeholder='Password'>
-      <input type='submit' value='Sign In'>
+      <input class='btn btn-primary' type='submit' value='Submit'>
     </fieldset>
   </form>
 
-  <form id='sign-up'>
+  <button class="btn btn-primary sign-up" data-toggle="collapse" href="#sign-up">Sign Up</button>
+  <form class='collapse sign-up' id='sign-up'>
     <fieldset>
-      <legend>Sign Up</legend>
       <input type="email" name='credentials[email]' placeholder="example@example.com">
       <input type='password' name='credentials[password]' placeholder='Password'>
       <input type='password' name='credentials[password_confirmation]' placeholder='Confirm Password'>
-      <input type='submit' value='Sign Up'>
+      <input class='btn btn-primary' type='submit' value='Submit'>
     </fieldset>
   </form>
 
-  <form class='hidden' id='sign-out'>
+  <form class='hidden sign-out' id='sign-out'>
     <fieldset>
-      <legend>Sign Out</legend>
-      <input type='submit' value='Sign Out'>
+      <input class='btn btn-primary' type='submit' value='Sign Out'>
     </fieldset>
   </form>
 
-  <form class='hidden' id='change-password'>
+  <button class="hidden btn btn-primary change-password" data-toggle="collapse" href="#change-password">Change Password</button>
+  <form class='hidden collapse change-password' id='change-password'>
     <fieldset>
-      <legend>Change Password</legend>
       <input type='password' name='passwords[old]' placeholder='Old Password'>
       <input type='password' name='passwords[new]' placeholder='New Password'>
-      <input type='submit' value='Change Password'>
+      <input class='btn btn-primary' type='submit' value='Submit'>
     </fieldset>
   </form>
 
