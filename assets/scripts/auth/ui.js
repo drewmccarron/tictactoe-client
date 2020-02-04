@@ -45,6 +45,7 @@ const onChangePasswordFailure = function (response) {
 const onSignOutSuccess = function (response) {
   $('#message').text('Signed out successfully')
   store.user = undefined
+  store.game = undefined
   $('.sign-in').removeClass('hidden')
   $('.sign-up').removeClass('hidden')
   $('.change-password').addClass('hidden')
