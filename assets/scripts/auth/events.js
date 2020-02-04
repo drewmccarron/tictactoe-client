@@ -31,7 +31,7 @@ const onChangePassword = function (event) {
 
   api.changePassword(data)
     .then(ui.onChangePasswordSuccess)
-    .catch(ui.onChangePasswordSuccess)
+    .catch(ui.onChangePasswordFailure)
 }
 
 const onSignOut = function (event) {

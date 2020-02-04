@@ -9,6 +9,7 @@ const onSignUpSuccess = function (response) {
 
 const onSignUpFailure = function (response) {
   $('#message').text('Failed to sign up')
+  $('#sign-up').trigger('reset')
 }
 
 const onSignInSuccess = function (response) {
@@ -22,11 +23,13 @@ const onSignInSuccess = function (response) {
   $('#create-game').removeClass('hidden')
   $('#reset-game').removeClass('hidden')
   $('#get-games').removeClass('hidden')
+  $('.game-board').text('-')
   $('#4').text("Press 'New Game' to play")
 }
 
 const onSignInFailure = function (response) {
   $('#message').text('Failed to sign in')
+  $('#sign-in').trigger('reset')
 }
 
 const onChangePasswordSuccess = function (response) {
@@ -36,6 +39,7 @@ const onChangePasswordSuccess = function (response) {
 
 const onChangePasswordFailure = function (response) {
   $('#message').text('Failed to change password')
+  $('#change-password').trigger('reset')
 }
 
 const onSignOutSuccess = function (response) {
@@ -48,6 +52,7 @@ const onSignOutSuccess = function (response) {
   $('#create-game').addClass('hidden')
   $('#reset-game').addClass('hidden')
   $('#get-games').addClass('hidden')
+  $('.game-board').text('-')
   $('#4').text('Sign in to play')
 }
 
