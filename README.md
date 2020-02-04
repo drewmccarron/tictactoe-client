@@ -1,5 +1,3 @@
-### Read Me
-
 ## Technologies
 
 This app uses HTML, CSS, JavaScript, Bootstrap, Jquery, and AJAX.
