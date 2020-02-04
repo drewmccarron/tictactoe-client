@@ -17,7 +17,6 @@ const onPatchGameSuccess = function (response) {
   $('#message').text('Game patched successfully')
   store.game = response.game
   winCheck()
-  console.log(store.game)
   changePlayer()
 }
 
