@@ -3,13 +3,15 @@
 const store = require('./../store')
 
 const onSignUpSuccess = function (response) {
-  $('#message').text(response.user.email + ' successfully signed up')
+  // $('#message').text(response.user.email + ' successfully signed up')
   $('#sign-up').trigger('reset')
+  store.greenMessage(response.user.email + ' successfully signed up')
 }
 
 const onSignUpFailure = function (response) {
-  $('#message').text('Failed to sign up')
+  // $('#message').text('Failed to sign up')
   $('#sign-up').trigger('reset')
+  store.redMessage('Failed to sign up')
 }
 
 const onSignInSuccess = function (response) {
