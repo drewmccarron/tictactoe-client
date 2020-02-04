@@ -29,28 +29,9 @@
 
   <h3 id='message'></h3>
 
+<div id='test'>
+  <div class='inner-buttons' id='sign-in-block'>
   <button class="btn btn-primary sign-in" data-toggle="collapse" href="#sign-in">Sign In</button>
-
-  <button class="btn btn-primary sign-up" data-toggle="collapse" href="#sign-up">Sign Up</button>
-
-  <form class='hidden' id='reset-game'>
-    <fieldset>
-      <input class='btn btn-primary' type='submit' value='New Game'>
-    </fieldset>
-  </form>
-
-  <form class='hidden' id='get-games'>
-    <fieldset>
-      <input class='btn btn-primary' type='submit' value='Get Games'>
-    </fieldset>
-  </form>
-
-  <form class='hidden sign-out' id='sign-out'>
-    <fieldset>
-      <input class='btn btn-primary' type='submit' value='Sign Out'>
-    </fieldset>
-  </form>
-  <button class="hidden btn btn-primary change-password" data-toggle="collapse" href="#change-password">Change Password</button>
 
   <form class="collapse sign-in" id='sign-in'>
     <fieldset>
@@ -59,6 +40,10 @@
       <input class='btn btn-primary' type='submit' value='Submit'>
     </fieldset>
   </form>
+  </div>
+
+  <div class='inner-buttons' id='sign-up-block'>
+  <button class="btn btn-primary sign-up" data-toggle="collapse" href="#sign-up">Sign Up</button>
 
   <form class='collapse sign-up' id='sign-up'>
     <fieldset>
@@ -68,6 +53,34 @@
       <input class='btn btn-primary' type='submit' value='Submit'>
     </fieldset>
   </form>
+  </div>
+
+  <div class='inner-buttons'>
+  <form class='hidden' id='reset-game'>
+    <fieldset>
+      <input class='btn btn-primary' type='submit' value='New Game'>
+    </fieldset>
+  </form>
+  </div>
+
+  <div class='inner-buttons'>
+  <form class='hidden' id='get-games'>
+    <fieldset>
+      <input class='btn btn-primary' type='submit' value='Get Games'>
+    </fieldset>
+  </form>
+  </div>
+
+  <div class='inner-buttons'>
+  <form class='hidden sign-out' id='sign-out'>
+    <fieldset>
+      <input class='btn btn-primary' type='submit' value='Sign Out'>
+    </fieldset>
+  </form>
+  </div>
+
+  <div class='inner-buttons'>
+  <button class="hidden btn btn-primary change-password" data-toggle="collapse" href="#change-password">Change Password</button>
 
   <form class='hidden collapse change-password' id='change-password'>
     <fieldset>
@@ -76,6 +89,9 @@
       <input class='btn btn-primary' type='submit' value='Submit'>
     </fieldset>
   </form>
+  </div>
+
+</div>
 
 </body>
 </html>
