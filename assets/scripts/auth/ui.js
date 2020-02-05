@@ -55,6 +55,7 @@ const onSignOutSuccess = function (response) {
   $('#get-games').addClass('hidden')
   $('.game-board').text('-')
   $('#4').text('Sign in to play')
+  $('#change-password').trigger('reset')
 }
 
 const onSignOutFailure = function (response) {
