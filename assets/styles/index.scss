@@ -53,3 +53,19 @@ h1, h3 {
   margin-right: -100px;
   padding-top: 2px;
 }
+
+.zero, .one, .two {
+  border-top: 2px solid;
+}
+
+.zero, .three, .six {
+  border-left: 2px solid;
+}
+
+.two, .five, .eight {
+  border-right: 2px solid;
+}
+
+.six, .seven, .eight {
+  border-bottom: 2px solid;
+}
